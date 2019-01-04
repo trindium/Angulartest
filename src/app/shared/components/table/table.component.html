@@ -1,0 +1,21 @@
+<div class="table-responsive">
+  <table 
+    class="table table-styling {{tableStyle}} {{tableSize}} {{tableBorders}} {{hoverEffect ? 'table-hover' : '' }}" >
+    <thead>
+    <tr class="{{tableHeadStyle}}">
+      <th *ngFor="let col of columns">
+          {{col}}
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of data" 
+        app-table-row
+        [row] ="row" 
+        [columns] ="columns"
+        class="{{row.rowStyle}}"
+        >
+      </tr>
+    </tbody>
+  </table>
+</div>

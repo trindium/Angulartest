@@ -1,0 +1,17 @@
+<li class="header-notification">
+  <a href="javascript:;">
+    <i class="ti-bell"></i>
+    <span class="badge" *ngIf="quantity">{{quantity}}</span>
+  </a>
+  <ul class="show-notification">
+    <li>
+      <h6>Notifications</h6>
+      <label class="label label-danger" *ngIf="quantity">New</label>
+    </li>
+      <app-notification-item *ngFor="let notification of notifications"
+        [title] = "notification.title"
+        [message] = "notification.message"
+        [time] = "notification.time"
+      ></app-notification-item>
+  </ul>
+</li>

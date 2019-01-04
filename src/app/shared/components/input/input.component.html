@@ -1,0 +1,38 @@
+<div class="{{inputSize}}">
+  <div
+  class="form-group"
+  [class.has-danger]="hasError && input.pristine"
+  [class.has-success]="hasSuccess && input.pristine"
+  [class.has-warning]="hasWarning && input.pristine"
+  >
+    <label class="col-form-label">Simple Inputt</label>
+      <input 
+      #input="ngModel"
+      type="text"
+      class="
+        form-control 
+        {{validationClass}} 
+        {{textStyle}} 
+        {{textAlign}} 
+      "
+      [textMask]="{mask: mask, showMask: true}"
+      [attr.placeholder]="placeholder"
+      [attr.name]="name"
+      [attr.value]="value"
+      [attr.maxlength]="maxlength"
+      [attr.minlength]="minlength"
+      [attr.autocomplete]="autocomplete ? 'on' : 'off'"
+      [attr.readonly]="readonly"
+      [attr.required]="required"
+      [attr.disabled]="disabled"
+      [class.form-control-danger]="hasError && input.pristine"
+      [class.form-control-success]="hasSuccess && input.pristine"
+      [class.form-control-warning]="hasWarning && input.pristine"
+      ngModel
+      [attr.type]="type"
+      />
+      <div class="col-form-label" *ngIf="message && hasError || hasSuccess || hasWarning">
+        {{message}}
+      </div>
+    </div>
+</div>
